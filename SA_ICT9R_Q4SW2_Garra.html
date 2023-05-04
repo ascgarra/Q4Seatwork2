@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Q4 Seatwork 2</title>
+
+	<style type="text/css">
+       body {
+         font-family: Muli, sans-serif;
+         font-size: 16px;
+         background-color: #C3E8F9;
+         background-repeat: no-repeat;
+    }
+
+       h1 {
+         font-family: "Space Mono", monospace;
+         font-size: 46px;
+         text-align: center;
+    }
+
+    p{
+    	text-align: center;
+      font-family: 'Comfortaa';font-size: 25px;
+    }
+
+    form{
+    	text-align: center;
+    	font-size: 25px;
+
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 80%;
+      border: 1px solid #000000;
+      background-color: white;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 16px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #C3E8F9;
+    }
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input{
+      height: 20px;
+      width: 10%;
+    }
+	</style>
+</head>
+<body>
+	<h1>Temperature Converter ♨</h1>
+	<p id="today"></p>
+
+	<script>
+		const date = new Date();
+		document.getElementById('today').innerHTML = date;
+	</script>
+	<br>
+    <form>
+	<label>Fahrenheit: </label>
+    <input id="inputFahrenheit" type="number" 
+    oninput="temperatureConverter(this.value)" 
+    onchange="temperatureConverter(this.value)">
+    </form>
+    
+    <form><br>Celcius: <span id="outputCelcius"></span></form><br>
+
+    <script>
+    function temperatureConverter(valNum) {
+    valNum = parseFloat(valNum);
+    document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
+}
+    </script>
+    <br>
+    <br>
+    <br>
+    <table class="center">
+    <tr>
+      <th>Celsius (°C)</th>
+      <th>Fahrenheit (°F)</th> 
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>-273.15 °C</td>
+      <td>-459.67 °F</td>
+      <td>Absolute zero temperature</td>
+    </tr>
+    <tr>
+      <td>0 °C</td>
+      <td>J32.0 °F</td>
+      <td>Freezing/melting point of water</td>
+    </tr>
+    <tr>
+      <td>21 °C</td>
+      <td>69.8 °F</td>
+      <td>Room temperature</td>
+    </tr>
+    <tr>
+      <td>37 °C</td>
+      <td>98.6 °F</td>
+      <td>Average body temperature</td>
+    </tr>
+    <tr>
+      <td>100 °C</td>
+      <td>212.0 °F</td>
+      <td>Boiling point of water</td>
+    </tr>
+</table>
+</body>
+</html>
